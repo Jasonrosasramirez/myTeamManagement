@@ -6,7 +6,7 @@ const mysql = require("mysql"); // brings in the mySQL library.
 
 /*  Link to my SQL Server  */
 
-const connectionToMySQL = mySql.createConnection({
+const connectionToMySQL = mysql.createConnection({
 
     host: "localhost",
     port: process.env.PORT || 3000, // needed to create multiple sessions on this port. 
@@ -65,4 +65,4 @@ function popTheQuestions() {
 
 }
 
-poptheQuestions(); 
+popTheQuestions(); 
