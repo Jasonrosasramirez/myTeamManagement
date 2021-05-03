@@ -33,18 +33,11 @@ connectionToMySQL.connect(function(err) {
 const testQuestion = [
 
     // not to be used in the final version :) I'm just here to help
-
-    { 
-        type: "input",  // input type.
-        message: "How was your day today?", // the question that will be prompted 
-        name: "questionDay" // how it will be stored in the hash. 
-    }, 
-
     {
-        type: "list", // This will be multiple choice here 
-        message: "which pill will you take?",
-        name: "questionPill",  // stored in the hash as a different variable. 
-        choices: ["red pill", "blue pill", "no pill", "gummi pills"]  //  the multiple choice selection.  
+        name: "userChoice", 
+        type: "list", 
+        message: "Which pill will you take?",
+        choices: ["red pill", "blue pill", "reddit pill"]
     }
 
 ]
@@ -54,15 +47,10 @@ function popTheQuestions() {
     // I prompt the questions array to the user :D 
 
     inquirer
-    .prompt({
-        name: "userChoice", 
-        type: "list", 
-        message: "Which pill will you take?",
-        choices: ["red pill", "blue pill", "reddit pill"]
-    })
+    .prompt(testQuestion)
     .then((answer) => {     // a promise made here. Answers access the hash where the name is stored.
 
-        console.log(answer);
+        console.log("hello there ");
             
         // https://www.npmjs.com/package/inquirer
         // https://www.educative.io/edpresso/how-to-use-the-inquirer-node-package
