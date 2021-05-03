@@ -30,7 +30,7 @@ connectionToMySQL.connect(function(err) {
 
 /* Here is where we ask the user input */
 
-const testQuestion = [
+const testQuestionArray = [
 
     // not to be used in the final version :) I'm just here to help
     {
@@ -47,10 +47,10 @@ function popTheQuestions() {
     // I prompt the questions array to the user :D 
 
     inquirer
-    .prompt(testQuestion)
+    .prompt(testQuestionArray)
     .then((answer) => {     // a promise made here. Answers access the hash where the name is stored.
 
-        console.log("hello there ");
+        console.log("hello there " + answer.userChoice);
             
         // https://www.npmjs.com/package/inquirer
         // https://www.educative.io/edpresso/how-to-use-the-inquirer-node-package
