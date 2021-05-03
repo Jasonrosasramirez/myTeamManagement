@@ -58,11 +58,12 @@ function popTheQuestion() {
 
 }
 
-popTheQuestion(); 
+
+popTheQuestion(); // move me to the main function when you're done testing :) 
 
 
 /*  Here is where we define the actions based on the user input choice  */
-
+// Will all eventually get moved to a seperate script and get called in.
 function addDepartment () {
 
 
@@ -97,5 +98,28 @@ function updateEmployeeRole () {
 
 }
 
+/* Bonus Stage */
 
+function updateEmployeeManager () {
+
+}
  
+function viewEmployeeByManager () {
+
+} 
+
+function deleteDepartments () {
+
+}
+
+function deleteRoles () {
+
+}
+
+function deleteEmployee() {
+
+}
+
+function viewDepartmentBudget() {
+    // allows the user to view the total salary of each employee per department
+}
