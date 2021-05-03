@@ -30,7 +30,7 @@ connectionToMySQL.connect(function(err) {
 
 /* Here is where we ask the user input */
 
-const testQuestionArray = [
+const questionArray = [
 
     // not to be used in the final version :) I'm just here to help
     {
@@ -47,7 +47,7 @@ function popTheQuestion() {
     // I prompt the questions array to the user :D 
 
     inquirer
-    .prompt(testQuestionArray)
+    .prompt(questionArray)
     .then((answer) => {     // a promise made here. Answers access the hash where the name is stored.
 
         console.log("hello there " + answer.userChoice);
@@ -78,48 +78,11 @@ function addEmployees () {
 
 }
 
-function viewDepartments () { 
 
+/*  Where it is all brought together  */
 
-}
+function intMain () {
+    
+    popTheQuestion();
 
-function viewRoles () { 
-
-
-}
-
-function viewEmployees () {
-
-
-}
-
-function updateEmployeeRole () {
-
-
-}
-
-/* Bonus Stage */
-
-function updateEmployeeManager () {
-
-}
- 
-function viewEmployeeByManager () {
-
-} 
-
-function deleteDepartments () {
-
-}
-
-function deleteRoles () {
-
-}
-
-function deleteEmployee() {
-
-}
-
-function viewDepartmentBudget() {
-    // allows the user to view the total salary of each employee per department
 }
