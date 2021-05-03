@@ -59,30 +59,12 @@ function popTheQuestion() {
 }
 
 
-popTheQuestion(); // move me to the main function when you're done testing :) 
+//popTheQuestion(); // move me to the main function when you're done testing :) 
 
-
-/*  Here is where we define the actions based on the user input choice  */
-// Will all eventually get moved to a seperate script and get called in.
-function addDepartment () {
-
-
-}
-
-function addRoles () {
-
-   
-}
-
-function addEmployees () {
-
-}
-
-
-/*  Where it is all brought together  */
 
 function intMain () {
-    
-    popTheQuestion();
+    console.log("intMain activated"); 
 
 }
+
+intMain();

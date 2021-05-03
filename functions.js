@@ -1,12 +1,22 @@
+// All functions will be referenced by index.js
 
+// These three will get moved to functions.js eventually 
+function addDepartment () {
+    console.log("The addDepartment Function has been accessed :) ");
+}
 
-// will add the other functions here once some basic testing has been done :) 
+function addRoles () {
+   
+}
 
+function addEmployees () {
+
+}
 
 function viewDepartments () { 
 
-
 }
+
 
 function viewRoles () { 
 
