@@ -42,7 +42,7 @@ const testQuestionArray = [
 
 ]
 
-function popTheQuestions() { 
+function popTheQuestion() { 
 
     // I prompt the questions array to the user :D 
 
@@ -58,7 +58,44 @@ function popTheQuestions() {
 
 }
 
-popTheQuestions(); 
+popTheQuestion(); 
 
 
+/*  Here is where we define the actions based on the user input choice  */
 
+function addDepartment () {
+
+
+}
+
+function addRoles () {
+
+   
+}
+
+function addEmployees () {
+
+}
+
+function viewDepartments () { 
+
+
+}
+
+function viewRoles () { 
+
+
+}
+
+function viewEmployees () {
+
+
+}
+
+function updateEmployeeRole () {
+
+
+}
+
+
+ 
