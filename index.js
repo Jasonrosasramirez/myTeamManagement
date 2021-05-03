@@ -54,7 +54,12 @@ function popTheQuestions() {
     // I prompt the questions array to the user :D 
 
     inquirer
-    .prompt(testQuestion)
+    .prompt({
+        name: "userChoice", 
+        type: "list", 
+        message: "Which pill will you take?",
+        choices: ["red pill", "blue pill", "reddit pill"]
+    })
     .then((answer) => {     // a promise made here. Answers access the hash where the name is stored.
 
         console.log(answer);
