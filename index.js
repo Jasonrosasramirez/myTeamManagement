@@ -42,12 +42,13 @@ const questionArray = [
 
 ]
 
-function popTheQuestion() { 
+function popTheQuestion(question) { 
 
     // I prompt the questions array to the user :D 
+    console.log("popTheQuestion initiated"); 
 
     inquirer
-    .prompt(questionArray)
+    .prompt(question)
     .then((answer) => {     // a promise made here. Answers access the hash where the name is stored.
 
         console.log("hello there " + answer.userChoice);
@@ -59,12 +60,4 @@ function popTheQuestion() {
 }
 
 
-//popTheQuestion(); // move me to the main function when you're done testing :) 
-
-
-function intMain () {
-    console.log("intMain activated"); 
-
-}
-
-intMain();
+popTheQuestion(questionArray); // move me to the main function when you're done testing :) 
