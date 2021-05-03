@@ -1,18 +1,29 @@
 /*   Referemces to nmp Packages/ installations   */
 
-const mysql = require("mysql");
 const inquirer = require("inquirer");
+const mysql = require("mysql");
 
 
 /*  Link to my SQL Server  */
 
-const connection = mySql.createConnection({
+const connectionToMySQL = mySql.createConnection({
 
     host: "localhost",
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 3000, // needed to create multiple sessions on this port. 
     user: "root",
-    password: "Sequelites!8011", 
-    database: "testSystem"
+    password: "Sequelites!8011", // unique per person 
+    database: "employeeDatabase" // the database for this assignment
 
-    
+    // an object containing information to log into the mysql database. 
+    // https://www.w3schools.com/nodejs/nodejs_mysql.asp
 }); 
+
+connectionToMySQL.connect(function(err) {
+
+    if (err) throw err; 
+    console.log("Success! You have been connected to the employeeDatabase.");
+
+    // prompts an error or reassuring method for a connection attempt :) 
+    // https://www.w3w3schools.com/nodejs/nodejs_mysql.asp
+});
+
