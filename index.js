@@ -57,12 +57,15 @@ function popTheQuestions() {
     .prompt(testQuestion)
     .then((answer) => {     // a promise made here. Answers access the hash where the name is stored.
 
-        console.log("Let's see what this does.");
-        //console.log(answer.questionDay); 
-        
+        console.log(answer);
+            
         // https://www.npmjs.com/package/inquirer
+        // https://www.educative.io/edpresso/how-to-use-the-inquirer-node-package
     })
 
 }
 
 popTheQuestions(); 
+
+
+
