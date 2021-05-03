@@ -1,7 +1,7 @@
 /*   Referemces to nmp Packages/ installations   */
 
-const inquirer = require("inquirer");
-const mysql = require("mysql");
+const inquirer = require("inquirer");   // allows node to prompt questions. 
+const mysql = require("mysql"); // brings in the mySQL library. 
 
 
 /*  Link to my SQL Server  */
@@ -27,3 +27,10 @@ connectionToMySQL.connect(function(err) {
     // https://www.w3w3schools.com/nodejs/nodejs_mysql.asp
 });
 
+
+/* Here is where we ask the user input */
+
+function popTheQuestions() { 
+
+
+}
