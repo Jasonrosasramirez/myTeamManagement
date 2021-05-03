@@ -37,14 +37,14 @@ const testQuestion = [
     { 
         type: "input",  // input type.
         message: "How was your day today?", // the question that will be prompted 
-        name: "question1" // how it will be stored in the hash. 
+        name: "questionDay" // how it will be stored in the hash. 
     }, 
 
     {
         type: "list", // This will be multiple choice here 
         message: "which pill will you take?",
-        name: "question2",  // stored in the hash as a different variable. 
-        choices: ["red pill", "blue pill"]  //  the multiple choice selection.  
+        name: "questionPill",  // stored in the hash as a different variable. 
+        choices: ["red pill", "blue pill", "no pill", "gummi pills"]  //  the multiple choice selection.  
     }
 
 ]
@@ -58,7 +58,7 @@ function popTheQuestions() {
     .then((answer) => {     // a promise made here. Answers access the hash where the name is stored.
 
         console.log("Let's see what this does.");
-        console.log(answer.question1); 
+        //console.log(answer.questionDay); 
         
         // https://www.npmjs.com/package/inquirer
     })
