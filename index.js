@@ -30,6 +30,23 @@ connectionToMySQL.connect(function(err) {
 
 /* Here is where we ask the user input */
 
+const testQuestion = [
+
+    { 
+        type: "input",
+        message: "How was your day today?",
+        name: "question1"
+    }, 
+
+    {
+        type: "list", 
+        message: "which pill will you take?",
+        name: "question2", 
+        choices: ["red pill", "blue pill"]  
+    }
+
+]
+
 function popTheQuestions() { 
 
 
