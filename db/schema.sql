@@ -22,7 +22,14 @@ CREATE TABLE department (
     departmentName VARCHAR(30), 
 
     PRIMARY KEY (departmentID)
-
 )
 
+CREATE TABLE role (
 
+    roleID INT NOT NULL AUTO_INCREMENT, 
+    title VARCHAR(30), 
+    salaray DECIMAL, 
+    departmenID INT, 
+
+    Primary KEY (roleID)
+)
