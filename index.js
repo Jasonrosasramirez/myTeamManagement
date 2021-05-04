@@ -14,7 +14,7 @@ const {
     deleteDepartments, 
     deleteRoles, 
     deleteEmployee, 
-    viewDepartmentBudget} = require("./peripherals/functions");
+    viewDepartmentBudget} = require("./peripherals/functions"); // imports all of the functins from functions.js
 
 
 /*  Question Building  */
@@ -31,38 +31,39 @@ function nintendoSwitchCase(userChoice) {
         return addRoles();
 
         case "Add Employee": 
-        return console.log("userChoice " + userChoice);
+        return addEmployees();
 
         case "View Departments": 
-        return console.log("userChoice " + userChoice);
+        return viewDepartments();
 
         case "View Roles": 
-        return console.log("userChoice " + userChoice);
+        return viewRoles();
 
         case "View Employees": 
-        return console.log("userChoice " + userChoice);
+        return viewEmployees();
 
         case "Update Employee Role": 
-        return console.log("userChoice " + userChoice);
+        return updateEmployeeRole();
 
         case "Update Employee Manager": 
-        return console.log("userChoice " + userChoice);
+        return updateEmployeeManager();
 
         case "View Employee By Manager": 
-        return console.log("userChoice " + userChoice);
+        return viewEmployeeByManager();
 
         case "Delete Departments": 
-        return console.log("userChoice " + userChoice);
+        return deleteDepartments();
 
         case "Delete Roles": 
-        return console.log("userChoice " + userChoice);
+        return deleteRoles();
 
         case "Delete Employee": 
-        return console.log("userChoice " + userChoice);
+        return deleteEmployee();
 
         case "View Department Budget": 
-        return console.log("userChoice " + userChoice);
+        return viewDepartmentBudget();
     }
+
 }
 
 function popTheQuestion(question) { 
