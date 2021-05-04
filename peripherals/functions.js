@@ -7,7 +7,7 @@ function addDepartment () {
 
 
 function addRoles () {
-   
+    //console.log("The addRoles Function has been accessed :) ");
 }
 
 function addEmployees () {
@@ -58,5 +58,5 @@ function viewDepartmentBudget() {
 }
 
 
-module.exports = {addDepartment, addRoles};
+module.exports = {addDepartment, addRoles, addEmployees, viewDepartments, viewRoles, viewEmployees, updateEmployeeRole, updateEmployeeManager, viewEmployeeByManager, deleteDepartments, deleteRoles, deleteEmployee, viewDepartmentBudget};
 
