@@ -58,4 +58,5 @@ function viewDepartmentBudget() {
 }
 
 
-export { addDepartment };
+module.exports = {addDepartment, addRoles};
+

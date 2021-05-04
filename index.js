@@ -1,11 +1,19 @@
 const inquirer = require("inquirer");   // allows node to prompt questions. 
 const questionArrayEmployees = require("./peripherals/questions.js"); // references the questions array object on questions.js 
 
+const {addDepartment, addRoles} = require("./peripherals/functions");
+
+
 /* Importing the function from user choices */
 
+/* Export
 function addDepartment () {
     console.log("The addDepartment Function has been accessed :) ");
 }
+
+*/
+
+
 
 
 /*  Question Building  */
@@ -69,7 +77,6 @@ function popTheQuestion(question) {
         nintendoSwitchCase(answer.userChoice);
 
     })
-
 }
 
 
