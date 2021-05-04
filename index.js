@@ -21,7 +21,14 @@ const questionArrayEmployees = [
             "Add Employee", 
             "View Departments", 
             "View Roles", 
-            "View Employees"
+            "View Employees", 
+            "Update Employee Role", 
+            "Update Employee Manager", 
+            "View Employee By Manager", 
+            "Delete Departments", 
+            "Delete Roles", 
+            "Delete Employee", 
+            "View Department Budget"
         ]
     }
 ]
