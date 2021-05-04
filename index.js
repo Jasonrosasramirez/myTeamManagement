@@ -34,15 +34,49 @@ const questionArrayEmployees = [
 ]
 
 function nintendoSwitchCase(userChoice) {
-    console.log("\nFunction nintendoSwitchCase activated");
     console.log("userChoice within switch case | " + userChoice);
 
-    if (userChoice == "Add Department") { 
-        console.log("look at here " + userChoice);
-    }
+    switch (userChoice) {
+        // cleaner to read than a series of else if statements
 
-    else { 
-        console.log("Option not available. You selection was --- " + userChoice);
+        case "Add Department": 
+        return console.log("userChoice " + userChoice); 
+
+        case "Add Roles": 
+        return console.log("userChoice " + userChoice);
+
+        case "Add Employee": 
+        return console.log("userChoice " + userChoice);
+
+        case "View Departments": 
+        return console.log("userChoice " + userChoice);
+
+        case "View Roles": 
+        return console.log("userChoice " + userChoice);
+
+        case "View Employees": 
+        return console.log("userChoice " + userChoice);
+
+        case "Update Employee Role": 
+        return console.log("userChoice " + userChoice);
+
+        case "Update Employee Manager": 
+        return console.log("userChoice " + userChoice);
+
+        case "View Employee By Manager": 
+        return console.log("userChoice " + userChoice);
+
+        case "Delete Departments": 
+        return console.log("userChoice " + userChoice);
+
+        case "Delete Roles": 
+        return console.log("userChoice " + userChoice);
+
+        case "Delete Employee": 
+        return console.log("userChoice " + userChoice);
+
+        case "View Department Budget": 
+        return console.log("userChoice " + userChoice);
     }
 }
 
