@@ -1,34 +1,32 @@
-const mysql = require('mysql'); //  Installing mysql instructions per https://www.npmjs.com/package/mysql
-const connection = mysql.createConnection({ 
-    host: "localhost", 
-    user: "Nate", 
-    password: "secret"
+/*  Link to my SQL Server  */
+const mysql = require("mysql"); // brings in the mySQL library. 
+
+const connectionToMySQL = mysql.createConnection({
+
+    host: "localhost",
+    port: process.env.PORT || 3000, // needed to create multiple sessions on this port. 
+    user: "root",
+    password: "Sequelites!8011", // unique per person 
+    database: "employeeDatabase" // the database for this assignment
+
+    // an object containing information to log into the mysql database. 
+    // https://www.w3schools.com/nodejs/nodejs_mysql.asp
 }); 
 
+connectionToMySQL.connect(function(err) {
 
-connection.connect(function(err) {
-    if (err) {
-        console.error("error connecting: " + err.stack); 
-        return;
-    }
+    if (err) throw err; 
+    console.log("Success! You have been connected to the employeeDatabase.");
 
-    console.log("connected as id " + connection.threadID); 
-
-})
-
-
-
-
-
-
-
-
+    // prompts an error or reassuring method for a connection attempt :) 
+    // https://www.w3w3schools.com/nodejs/nodejs_mysql.asp
+});
 
 
 /*  installation  */
 /*
 .used npm install mysql before writing any code. 
-.
+.was originally part of index.js but I moved this over. 
 .
 .
 .
