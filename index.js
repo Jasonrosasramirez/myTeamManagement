@@ -30,7 +30,13 @@ function nintendoSwitchCase(userChoice) {
     console.log("\nFunction nintendoSwitchCase activated");
     console.log("userChoice within switch case | " + userChoice);
 
+    if (userChoice == "Add Department") { 
+        console.log("look at here " + userChoice);
+    }
 
+    else { 
+        console.log("Option not available. You selection was --- " + userChoice);
+    }
 }
 
 function popTheQuestion(question) { 
