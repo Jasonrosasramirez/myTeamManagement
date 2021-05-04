@@ -5,6 +5,7 @@ function addDepartment () {
     console.log("The addDepartment Function has been accessed :) ");
 }
 
+
 function addRoles () {
    
 }
@@ -55,3 +56,6 @@ function deleteEmployee() {
 function viewDepartmentBudget() {
     // allows the user to view the total salary of each employee per department
 }
+
+
+export { addDepartment };

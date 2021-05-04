@@ -23,6 +23,10 @@ connectionToMySQL.connect(function(err) {
 });
 
 
+
+
+
+
 /*  installation  */
 /*
 .used npm install mysql before writing any code. 

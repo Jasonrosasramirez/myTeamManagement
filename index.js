@@ -11,16 +11,15 @@ function addDepartment () {
 /*  Question Building  */
 
 function nintendoSwitchCase(userChoice) {
-    console.log("userChoice within switch case | " + userChoice);
+    console.log("userChoice within nintendoSwitchCase | " + userChoice);
 
     switch (userChoice) {
         // cleaner to read than a series of else if statements
-
         case "Add Department": 
-        return console.log("userChoice " + userChoice); 
+        return addDepartment(); 
 
         case "Add Roles": 
-        return console.log("userChoice " + userChoice);
+        return console.log("userChoice within switchcase | " + userChoice);
 
         case "Add Employee": 
         return console.log("userChoice " + userChoice);
@@ -65,7 +64,7 @@ function popTheQuestion(question) {
     .prompt(question)
     .then((answer) => {     // a promise made here. Answers access the hash where the name is stored.
 
-        console.log("This is userChoice |  " + answer.userChoice + "\n");
+        console.log("This is userChoice within .then |  " + answer.userChoice + "\n");
         
         nintendoSwitchCase(answer.userChoice);
 
