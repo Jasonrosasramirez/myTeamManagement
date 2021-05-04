@@ -23,7 +23,7 @@ connectionToMySQL.connect(function(err) {
 });
 
 
-
+module.exports = connectionToMySQL;
 
 
 

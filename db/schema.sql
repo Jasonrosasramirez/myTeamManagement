@@ -7,29 +7,32 @@ CREATE DATABASE teamDB;
 USE teamDB;
 
 CREATE TABLE employee (
-    employeeID INT NOT NULL AUTO_INCREMENT, -- auto creates a new ID per employee entry. Cannot be empty. 
-    firstName VARCHAR(30), -- accepts string values that are up to 30 characters in length. 
-    lastName VARCHAR(30), 
-    roleID INT, -- will be an integer.
-    managerID INT, 
+    id INT NOT NULL AUTO_INCREMENT, -- auto creates a new ID per employee entry. Cannot be empty. 
+    first_name VARCHAR(30), -- accepts string values that are up to 30 characters in length. 
+    last_name VARCHAR(30), 
+    role_id INT, -- will be an integer.
+    FOREIGN KEY (role_id) REFERENCES role(id) ON DELETE CASCADE
+    manager_id INT, 
+    FOREIGN KEY (manager_id) REFERENCES employee(id) ON DELETE CASCADE
     -- everything above will be a table column. 
 
-    PRIMARY KEY (employeeID) -- what the table will mostly sort by. 
+    PRIMARY KEY (id) -- what the table will mostly sort by. 
+
 )
 
 CREATE TABLE department (
-    departmentID INT NOT NULL Auto_INCREMENT, 
-    departmentName VARCHAR(30), 
+    id INT NOT NULL Auto_INCREMENT, 
+    department_name VARCHAR(30), 
 
-    PRIMARY KEY (departmentID)
+    PRIMARY KEY (id)
 )
 
 CREATE TABLE role (
-
-    roleID INT NOT NULL AUTO_INCREMENT, 
+    id INT NOT NULL AUTO_INCREMENT, 
     title VARCHAR(30), 
     salaray DECIMAL, 
-    departmenID INT, 
+    department_id INT, 
+    FOREIGN KEY (department_id) REFERENCES department(id) ON DELETE CASCADE    
 
     Primary KEY (roleID)
 )

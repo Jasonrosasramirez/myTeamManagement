@@ -1,20 +1,7 @@
 const inquirer = require("inquirer");   // allows node to prompt questions. 
 const questionArrayEmployees = require("./peripherals/questions.js"); // references the questions array object on questions.js 
 
-const {
-    addDepartment, 
-    addRoles, 
-    addEmployees, 
-    viewDepartments, 
-    viewRoles, 
-    viewEmployees, 
-    updateEmployeeRole, 
-    updateEmployeeManager, 
-    viewEmployeeByManager, 
-    deleteDepartments, 
-    deleteRoles, 
-    deleteEmployee, 
-    viewDepartmentBudget} = require("./peripherals/functions"); // imports all of the functins from functions.js
+const DB = require("./peripherals/functions"); // imports all of the functins from functions.js
 
 
 /*  Question Building  */
@@ -25,7 +12,7 @@ function nintendoSwitchCase(userChoice) {
     switch (userChoice) {
         // cleaner to read than a series of else if statements
         case "Add Department": 
-        return addDepartment(); 
+        return DB.addDepartment(); 
 
         case "Add Roles": 
         return addRoles();
@@ -72,17 +59,16 @@ function popTheQuestion(question) {
 
     inquirer
     .prompt(question)
-    .then((answer) => {     // a promise made here. Answers access the hash where the name is stored.
+    .then((answer) => {     
 
         console.log("This is userChoice within .then |  " + answer.userChoice + "\n");
-        
-        nintendoSwitchCase(answer.userChoice);
+        nintendoSwitchCase(answer.userChoice); // basically the function manager. 
 
     })
 }
 
 
-popTheQuestion(questionArrayEmployees); // move me to the main function when you're done testing :) 
+popTheQuestion(questionArrayEmployees); // initiates everything when node index.js is ran. 
 
 
 
