@@ -1,4 +1,5 @@
 const inquirer = require("inquirer");   // allows node to prompt questions. 
+const questionArrayEmployees = require("./peripherals/questions.js"); // references the questions array object on questions.js 
 
 /* Importing the function from user choices */
 
@@ -8,30 +9,6 @@ function addDepartment () {
 
 
 /*  Question Building  */
-
-const questionArrayEmployees = [
-
-    {
-        name: "userChoice", 
-        type: "list", 
-        message: "Hey there! What will it be today?",
-        choices: [
-            "Add Department", 
-            "Add Roles", 
-            "Add Employee", 
-            "View Departments", 
-            "View Roles", 
-            "View Employees", 
-            "Update Employee Role", 
-            "Update Employee Manager", 
-            "View Employee By Manager", 
-            "Delete Departments", 
-            "Delete Roles", 
-            "Delete Employee", 
-            "View Department Budget"
-        ]
-    }
-]
 
 function nintendoSwitchCase(userChoice) {
     console.log("userChoice within switch case | " + userChoice);

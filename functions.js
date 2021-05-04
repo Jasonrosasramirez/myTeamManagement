@@ -20,16 +20,13 @@ function viewDepartments () {
 
 function viewRoles () { 
 
-
 }
 
 function viewEmployees () {
 
-
 }
 
 function updateEmployeeRole () {
-
 
 }
 
