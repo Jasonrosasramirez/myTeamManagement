@@ -11,67 +11,78 @@ function nintendoSwitchCase(userChoice) {
 
     switch (userChoice) {
         // cleaner to read than a series of else if statements
-        case "Add Department": 
-        return DB.addDepartment(); 
+        case "Add Department":
+            return createDepartment();
 
-        case "Add Roles": 
-        return addRoles();
+        case "Add Roles":
+            return createRoles();
 
-        case "Add Employee": 
-        return addEmployees();
+        case "Add Employee":
+            return createEmployees();
 
-        case "View Departments": 
-        return viewDepartments();
+        case "View Departments":
+            return getDepartments();
 
-        case "View Roles": 
-        return viewRoles();
+        case "View Roles":
+            return getRoles();
 
-        case "View Employees": 
-        return viewEmployees();
+        case "View Employees":
+            return getEmployees();
 
-        case "Update Employee Role": 
-        return updateEmployeeRole();
+        case "Update Employee Role":
+            return reviseEmployeeRole();
 
-        case "Update Employee Manager": 
-        return updateEmployeeManager();
+        case "Update Employee Manager":
+            return reviseEmployeeManager();
 
-        case "View Employee By Manager": 
-        return viewEmployeeByManager();
+        case "View Employee By Manager":
+            return getEmployeeByManager();
 
-        case "Delete Departments": 
-        return deleteDepartments();
+        case "Delete Departments":
+            return removeDepartments();
 
-        case "Delete Roles": 
-        return deleteRoles();
+        case "Delete Roles":
+            return removeRoles();
 
-        case "Delete Employee": 
-        return deleteEmployee();
+        case "Delete Employee":
+            return removeEmployee();
 
-        case "View Department Budget": 
-        return viewDepartmentBudget();
+        case "View Department Budget":
+            return getDepartmentBudget();
     }
 
 }
 
-function popTheQuestion(question) { 
+function popTheQuestion(question) {
     // I prompt the questions array to the user :D 
-    console.log("\nFunction popTheQuestion initiated"); 
+    console.log("\nFunction popTheQuestion initiated");
 
     inquirer
-    .prompt(question)
-    .then((answer) => {     
+        .prompt(question)
+        .then((answer) => {
 
-        console.log("This is userChoice within .then |  " + answer.userChoice + "\n");
-        nintendoSwitchCase(answer.userChoice); // basically the function manager. 
+            console.log("This is userChoice within .then |  " + answer.userChoice + "\n");
+            nintendoSwitchCase(answer.userChoice); // basically the function manager. 
 
-    })
+        })
 }
 
 
 popTheQuestion(questionArrayEmployees); // initiates everything when node index.js is ran. 
 
 
+async function createDepartment() {
 
+    const department = await inquirer.prompt([{
+        name: "name",
+        type: "input",
+        message: "what department would you like to add?",
+
+    }])
+    await db.addDepartment(department);
+    popTheQuestion;
+
+}
 
 
 
