@@ -4,7 +4,7 @@ const questionArrayEmployees = require("./peripherals/questions.js"); // referen
 const DB = require("./peripherals/functions"); // imports all of the functins from functions.js
 
 
-/*  Question Building  */
+/*  Question Selection  */
 
 function nintendoSwitchCase(userChoice) {
     console.log("userChoice within nintendoSwitchCase | " + userChoice);
@@ -83,6 +83,74 @@ async function createDepartment() {
     popTheQuestion;
 
 }
+
+async function createRoles() {
+
+
+}
+
+async function createEmployees() {
+
+
+}
+
+async function getDepartments() {
+
+
+}
+
+
+async function getRoles() {
+
+
+}
+
+async function getEmployees() {
+
+
+}
+
+
+async function reviseEmployeeRole() {
+
+
+}
+
+
+async function reviseEmployeeManager() {
+
+
+}
+ 
+async function getEmployeeByManager() {
+
+
+}
+
+
+async function removeDepartments() {
+
+
+}
+
+async function removeRoles() {
+
+
+}
+
+async function removeEmployee() {
+
+
+}
+
+async function getDepartmentBudget() {
+
+
+}
+
+
+
+
 
 
 

@@ -80,9 +80,6 @@ class DB {
         // allows the user to view the total salary of each employee per department
     }
 
-
-
-
 }
 
 
