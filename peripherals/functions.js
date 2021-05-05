@@ -9,8 +9,7 @@ class DB {
 
     // These three will get moved to functions.js eventually 
     addDepartment(dept) {
-        console.log("The addDepartment  has been accessed :) ");
-
+        console.log("The addDepartment has been accessed :) ");
         return this.connection.query(
             "INSERT INTO department SET ?", dept
         );
@@ -18,18 +17,15 @@ class DB {
 
 
     addRoles(rol) {
-        console.log("The addRoles  has been accessed :) ");
-
+        console.log("The addRoles has been accessed :) ");
         return this.connection.query(
             "INSERT INTO roles SET ?", rol
         );
-
 
     }
 
     addEmployees(empl) {
         console.log("The addEmployees has been accessed :) ");
-
         return this.connection.query(
             "INSERT INTO employee SET ?", empl
         );
@@ -39,7 +35,6 @@ class DB {
     viewDepartments() {
 
     }
-
 
     viewRoles() {
 

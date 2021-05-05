@@ -68,29 +68,38 @@ function popTheQuestion(question) {
 }
 
 
-popTheQuestion(questionArrayEmployees); // initiates everything when node index.js is ran. 
-
+/* proxy function name that calls on DB imports */
 
 async function createDepartment() {
-
+    
     const department = await inquirer.prompt([{
-        name: "name",
-        type: "input",
-        message: "what department would you like to add?",
-
+        name: "name", // what it will be stored in the hash as. Using answer.name is how it can be referenced
+        type: "input", // text input. 
+        message: "what department would you like to add?" // the user prompt. 
     }])
-    await db.addDepartment(department);
-    popTheQuestion;
-
+    await db.addDepartment(department); // addDepartment() found on function.js
+    popTheQuestion; // brings up the question list again. 
 }
 
 async function createRoles() {
 
-
+    const role = await inquirer.prompt([{
+        name: "role",
+        type: "input", 
+        message: "what role would you like to add?"
+    }])
+    await db.addRoles(role); 
+    popTheQuestion;
 }
 
 async function createEmployees() {
-
+    const role = await inquirer.prompt([{
+        name: "role",
+        type: "input", 
+        message: "Who is the employee you like to add?"
+    }])
+    await db.add_employees(role); 
+    popTheQuestion;
 
 }
 
@@ -149,6 +158,9 @@ async function getDepartmentBudget() {
 }
 
 
+/* Gets the party started  */
+
+popTheQuestion(questionArrayEmployees); // initiates everything when node index.js is ran. 
 
 
 
