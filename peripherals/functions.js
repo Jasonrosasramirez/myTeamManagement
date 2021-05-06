@@ -8,29 +8,39 @@ class DB {
     }
 
     // These three will get moved to functions.js eventually 
-    addDepartment(dept) {
+    async addDepartment(dept) {
         console.log("The addDepartment has been accessed :) ");
-        return this.connection.query(
+        return await this.connection.query(
             "INSERT INTO department SET ?", dept
         );
+
     }
 
 
     addRoles(rol) {
-        console.log("The addRoles has been accessed :) ");
-        return this.connection.query(
-            "INSERT INTO roles SET ?", rol
-        );
+        // console.log("The addRoles has been accessed :) ");
+        // return this.connection.query(
+        //     "INSERT INTO roles SET ?", rol
+        // );
 
     }
 
     addEmployees(empl) {
-        console.log("The addEmployees has been accessed :) ");
-        return this.connection.query(
-            "INSERT INTO employee SET ?", empl
-        );
+        // console.log("The addEmployees has been accessed :) ");
+        // return this.connection.query(
+        //     "INSERT INTO employee SET ?", empl
+        // );
 
     }
+
+    /*
+    
+    
+    
+    
+    */
+
+
 
     viewDepartments() {
 
@@ -78,5 +88,5 @@ class DB {
 }
 
 
-module.exports = new DB(connection);
+module.exports = new DB(); // connection
 

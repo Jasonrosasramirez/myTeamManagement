@@ -53,18 +53,18 @@ function nintendoSwitchCase(userChoice) {
 
 }
 
-function popTheQuestion(question) {
+async function popTheQuestion(question) {
     // I prompt the questions array to the user :D 
     console.log("\nFunction popTheQuestion initiated");
 
-    inquirer
+    await inquirer
         .prompt(question)
         .then((answer) => {
 
             console.log("This is userChoice within .then |  " + answer.userChoice + "\n");
             nintendoSwitchCase(answer.userChoice); // basically the function manager. 
 
-        })
+        }, error => console.log(error))
 }
 
 
@@ -77,8 +77,8 @@ async function createDepartment() {
         type: "input", // text input. 
         message: "what department would you like to add?" // the user prompt. 
     }])
-    await db.addDepartment(department); // addDepartment() found on function.js
-    popTheQuestion; // brings up the question list again. 
+    //await db.addDepartment(department); // addDepartment() found on function.js
+    //popTheQuestion; // brings up the question list again. 
 }
 
 async function createRoles() {

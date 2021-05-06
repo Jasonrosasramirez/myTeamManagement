@@ -4,26 +4,34 @@ const mysql = require("mysql"); // brings in the mySQL library.
 const connectionToMySQL = mysql.createConnection({
 
     host: "localhost",
-    port: process.env.PORT || 3000, // needed to create multiple sessions on this port. 
+    port: 3306, // needed to create multiple sessions on this port. 
     user: "root",
     password: "Sequelites!8011", // unique per person 
-    database: "employeeDatabase" // the database for this assignment
+    database: "teamDB" // the database for this assignment
 
     // an object containing information to log into the mysql database. 
     // https://www.w3schools.com/nodejs/nodejs_mysql.asp
 }); 
 
-connectionToMySQL.connect(function(err) {
+module.exports = new Promise( (accept, reject) => 
 
-    if (err) throw err; 
-    console.log("Success! You have been connected to the employeeDatabase.");
+    connectionToMySQL.connect(function(err) {
 
-    // prompts an error or reassuring method for a connection attempt :) 
-    // https://www.w3w3schools.com/nodejs/nodejs_mysql.asp
-});
+        if (err) {
+            console.log("Your error is:")
+            console.log(err);
+            reject(err);
+        }
+        console.log("Success! You have been connected to the employeeDatabase.");
+        accept();
 
+        // prompts an error or reassuring method for a connection attempt :) 
+        // https://www.w3w3schools.com/nodejs/nodejs_mysql.asp
+    })
 
-module.exports = connectionToMySQL;
+)
+
+// module.exports = connectionToMySQL;
 
 
 
