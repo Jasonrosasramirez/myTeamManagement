@@ -8,54 +8,57 @@ class DB {
     }
 
     // These three will get moved to functions.js eventually 
-    async addDepartment(dept) {
-        console.log("The addDepartment has been accessed :) ");
+    async addDepartment(dep) {
+        console.log("functions.js | addDepartment has been accessed ");
         return await this.connection.query(
-            "INSERT INTO department SET ?", dept
+            "INSERT INTO department SET ?", dep
         );
 
     }
 
 
-    addRoles(rol) {
-        // console.log("The addRoles has been accessed :) ");
-        // return this.connection.query(
-        //     "INSERT INTO roles SET ?", rol
-        // );
+    async addRoles(rol) {
+        console.log("functions.js | addRoles has been accessed :) ");
+        //return await this.connection.query(
+             //"INSERT INTO roles SET ?", rol
+         //);
 
     }
 
-    addEmployees(empl) {
-        // console.log("The addEmployees has been accessed :) ");
-        // return this.connection.query(
-        //     "INSERT INTO employee SET ?", empl
-        // );
+    async addEmployees(empl) {
+         console.log("functions.js | addEmployees has been accessed :) ");
+         //return await this.connection.query(
+             //"INSERT INTO employee SET ?", empl
+         //);
 
     }
 
-    /*
-    
-    
-    
-    
-    */
-
-
-
-    viewDepartments() {
-
+    async viewDepartments(dep) {
+        console.log("functions.js | viewDepartments has been accessed :) ");
+         //return await this.connection.query(
+             //"SHOW TABLES ?", dep
+         //);
     }
 
-    viewRoles() {
-
+    viewRoles(rol) {
+        console.log("functions.js | viewRoles has been accessed :) ");
+        //return await this.connection.query(
+            //"SHOW TABLES ?", rol
+        //);
     }
 
-    viewEmployees() {
-
+    viewEmployees(emp) {
+        console.log("functions.js | viewRoles has been accessed :) ");
+        //return await this.connection.query(
+            //"SHOW TABLES ?", emp
+        //);
     }
 
-    updateEmployeeRole() {
-
+    updateEmployeeRole(upd) {
+        console.log("functions.js | updateEmployeeRole has been accessed :) ");
+        //return await this.connection.query(
+            //"SHOW TABLES ?", upd
+        //);
     }
 
 
@@ -86,7 +89,6 @@ class DB {
     }
 
 }
-
 
 module.exports = new DB(); // connection
 

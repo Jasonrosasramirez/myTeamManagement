@@ -31,9 +31,6 @@ module.exports = new Promise( (accept, reject) =>
 
 )
 
-// module.exports = connectionToMySQL;
-
-
 
 /*  installation  */
 /*
