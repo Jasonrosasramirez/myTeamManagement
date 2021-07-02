@@ -52,7 +52,7 @@ const popTheQuestion = (questionArrayImport) => {
 
 /* -- Secondary Functions from popTheQuestion -- */
 
-const addEmployees = () => {
+const createEmployees = () => {
     inquirer.prompt(
         {
             name: "empFirstNameNew", 
