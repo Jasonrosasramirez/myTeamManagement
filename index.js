@@ -18,7 +18,7 @@ const popTheQuestion = (questionArrayImport) => {
     .then((answer) => {
         switch (answer.choice) {
 
-            case "Add Employee":
+            case "Add Employees":
             return createEmployees();
 
             case "Add Roles":
@@ -42,34 +42,9 @@ const popTheQuestion = (questionArrayImport) => {
             case "Exit Now": 
             return exitLoop();
 
-            /*
-
-            Extra questions
-
-            case "Update Employee Manager":
-            return reviseEmployeeManager();
-
-            case "View Employee By Manager":
-            return getEmployeeByManager();
-
-            case "Delete Departments":
-            return removeDepartments();
-
-            case "Delete Roles":
-            return removeRoles();
-
-            case "Delete Employee":
-            return removeEmployee();
-
-            case "View Department Budget":
-            return getDepartmentBudget();
-            
-            */
-
             default: 
             console.log("Invalid Option"); 
             break; 
-
         }
     });
 }
