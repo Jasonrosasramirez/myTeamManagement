@@ -1,10 +1,119 @@
+
+/* -- requiring -- */
+
+const mysql = require("mysql"); 
 const inquirer = require("inquirer");   // allows node to prompt questions. 
-const questionArrayEmployees = require("./peripherals/questions.js"); // references the questions array object on questions.js 
-
-const DB = require("./peripherals/functions"); // imports all of the functins from functions.js
 
 
-/*  Question Selection  */
+/* -- imports information from other scripts -- */
+
+const questionArrayEmployees = require("./questions.js"); // references the questions array object on questions.js 
+const DB = require("./functions"); // imports all of the functins from functions.js
+
+
+/* -- Manages the information shown on the terminal -- */
+
+const popTheQuestion = (questionArrayImport) => {
+    inquirer.prompt(questionArrayEmployees)
+    .then((answer) => {
+        switch (answer.choice) {
+
+            case "Add Employee":
+            return createEmployees();
+
+            case "Add Roles":
+            return createRoles();
+
+            case "Add Department":
+            return createDepartment();
+
+            case "View Employees":
+            return getEmployees();
+
+            case "View Roles":
+            return getRoles();
+
+            case "View Departments":
+            return getDepartments();
+
+            case "Update Employee Role":
+            return reviseEmployeeRole();
+
+            case "Exit Now": 
+            return exitLoop();
+
+            /*
+
+            Extra questions
+
+            case "Update Employee Manager":
+            return reviseEmployeeManager();
+
+            case "View Employee By Manager":
+            return getEmployeeByManager();
+
+            case "Delete Departments":
+            return removeDepartments();
+
+            case "Delete Roles":
+            return removeRoles();
+
+            case "Delete Employee":
+            return removeEmployee();
+
+            case "View Department Budget":
+            return getDepartmentBudget();
+            
+            */
+
+            default: 
+            console.log("Invalid Option"); 
+            break; 
+
+        }
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+async function popTheQuestion(question) {
+    // I prompt the questions array to the user :D 
+    console.log("\nFunction popTheQuestion initiated");
+
+    await inquirer
+        .prompt(question)
+        .then((answer) => {
+
+            console.log("This is userChoice within .then |  " + answer.userChoice + "\n");
+            nintendoSwitchCase(answer.userChoice); // basically the function manager. 
+
+        }, error => console.log(error))
+}
+
 
 function nintendoSwitchCase(userChoice) {
     console.log("userChoice within nintendoSwitchCase | " + userChoice);
@@ -53,19 +162,15 @@ function nintendoSwitchCase(userChoice) {
 
 }
 
-async function popTheQuestion(question) {
-    // I prompt the questions array to the user :D 
-    console.log("\nFunction popTheQuestion initiated");
 
-    await inquirer
-        .prompt(question)
-        .then((answer) => {
+*/
 
-            console.log("This is userChoice within .then |  " + answer.userChoice + "\n");
-            nintendoSwitchCase(answer.userChoice); // basically the function manager. 
 
-        }, error => console.log(error))
-}
+
+
+
+
+
 
 
 /* proxy function name that calls on DB imports */

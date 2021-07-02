@@ -1,5 +1,5 @@
 // All functions will be referenced by index.js
-const connection = require("../db/SQLconnection");
+const connection = require("./config/SQLconnection");
 
 class DB {
 

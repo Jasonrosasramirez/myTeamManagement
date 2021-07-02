@@ -1,5 +1,6 @@
 /*  Link to my SQL Server  */
 const mysql = require("mysql"); // brings in the mySQL library. 
+const util = require("util"); 
 
 const connectionToMySQL = mysql.createConnection({
 
