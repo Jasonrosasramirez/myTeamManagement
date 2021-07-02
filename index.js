@@ -75,7 +75,63 @@ const popTheQuestion = (questionArrayImport) => {
 }
 
 
+/* -- Secondary Functions from popTheQuestion -- */
 
+const addEmployees = () => {
+    inquirer.prompt(
+        {
+            name: "empFirstNameNew", 
+            type: "input", 
+            message: "What is the employee's first name?"
+        }, 
+
+        {
+            name: "empLastNameNew", 
+            type: "input", 
+            message: "What is the employee's last name?"
+        }, 
+
+        {
+            name: "empRoleNew",
+            type: "list",
+            message: "What is the employee's new role here?",
+            choice: [
+                "Electrical Engineer",
+                "Software Engineer",
+                "US Regulatory Specialist",
+                "OUS Regulatory Specialist",
+                "US Marketing Specialist",
+                "OUS Marketing Specialist",
+                "IP Legal",
+                "injury Legal"
+            ]
+        },
+
+        {
+            name: "empManagerNew", 
+            type: "list", 
+            message: "Who is the lucky manager?", 
+            choice: [
+                "Sora Anderson", 
+                "Donald Duck", 
+                "Goofy Goof", 
+                "David Hayter", 
+                "Paz Ortiz", 
+                "Donald Anderson", 
+                "Mickey Mouse", 
+                "Bugs Bunny" 
+            ]
+        }
+    )
+}
+
+
+
+
+
+/* -- Gets the party started -- */
+
+popTheQuestion(questionArrayEmployees); // initiates everything when node index.js is ran. 
 
 
 
@@ -99,6 +155,17 @@ const popTheQuestion = (questionArrayImport) => {
 
 
 /*
+
+            "Add Employees"
+            "Add Roles"
+            "Add Department"
+            "View Employees" 
+            "View Roles"
+            "View Departments"
+            "Update Employee Role" 
+            "Exit Now"
+
+
 
 async function popTheQuestion(question) {
     // I prompt the questions array to the user :D 
@@ -163,6 +230,8 @@ function nintendoSwitchCase(userChoice) {
 }
 
 
+
+
 */
 
 
@@ -171,9 +240,10 @@ function nintendoSwitchCase(userChoice) {
 
 
 
+/*
 
+proxy function name that calls on DB imports 
 
-/* proxy function name that calls on DB imports */
 
 async function createDepartment() {
     
@@ -262,11 +332,7 @@ async function getDepartmentBudget() {
 
 }
 
-
-/* Gets the party started  */
-
-popTheQuestion(questionArrayEmployees); // initiates everything when node index.js is ran. 
-
+*/
 
 
 
