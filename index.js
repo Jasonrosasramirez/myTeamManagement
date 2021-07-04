@@ -153,23 +153,41 @@ async function createRoles(){
 
             
 async function createDepartment(){
-               
+    const department = await prompt([
+        {
+            name: "name", //saved in the hash
+            message: "which department will you add?"
+        }
+    ]); 
+
+    await config.createDepartment(department); 
+    console.log("new department added"); 
+
+    popTheQuestion();
 }
  
 
-async function getEmployees() {
+async function getEmployees() { // views the employees
+    const employees = await db.findAllEmployees(); // retreives the employees
 
+    console.log("\n check out the employees below \n");
+    console.table(employees); // displays the found employees as a table 
 
+    popTheQuestion();
 }
 
 
-async function getRoles() {
+async function getRoles() { // views the roles
+    const roles = await db.findAllRoles(); // scope: function locked :)  
 
+    console.log("\n check out the roles below \n");
+    console.table(roles); // displays the found employees as a table 
 
+    popTheQuestion();
 }
 
 
-async function getDepartments() {
+async function getDepartments() { // views the departments
 
 
 }
@@ -181,22 +199,10 @@ async function reviseEmployeeRole() {
 }
 
 
-async function exitLoop() {
-
-    
-}
-
-            
-
-
-
-
-
 const exitLoop = () => {
     console.log("Thank you! Happy Productivity :)"); 
     // break; 
 }
-
 
 
 /* -- Gets the party started -- */
