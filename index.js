@@ -9,6 +9,7 @@ const inquirer = require("inquirer");   // allows node to prompt questions.
 
 const questionArrayEmployees = require("./questions.js"); // references the questions array object on questions.js 
 const DB = require("./functions"); // imports all of the functins from functions.js
+const { config } = require("process");
 
 
 /* -- Manages the information shown on the terminal -- */
@@ -42,65 +43,90 @@ const popTheQuestion = (questionArrayImport) => {
             case "Exit Now": 
             return exitLoop();
 
-            default: 
-            console.log("Invalid Option"); 
-            break; 
+            // default: 
+            // console.log("Invalid Option"); 
+            // break; 
         }
     });
 }
 
 
-/* -- Secondary Functions from popTheQuestion -- */
+/* -- Secondary Functions Return from popTheQuestion -- */
+// was originally stored on a seperate functions.js file. Moved here to be easier. 
 
-const createEmployees = () => {
-    inquirer.prompt(
+// functino name is different from the choice. Recommended by tutor 
+async function createEmployees() {
+    //function needs to be asynchronous. Makes this stateless. Does not wait for the operation to finish. 
+    
+    // creating scope locked variables. Will start "fresh" on each iteration.
+    const roles = await config.allRoles(); // await can only be used inside an async function. Causes the function to pause until the a promise is settled.
+    const employees = await config.allEmployees; 
+
+    const employeePrompts = await prompt([
+        // a prompt is asked as an array of objects
         {
-            name: "empFirstNameNew", 
-            type: "input", 
-            message: "What is the employee's first name?"
+            name: "first_name", // what the value is stored as.
+            message: "What is the first name of our new employee?" // what will be prompted on the terminal
         }, 
 
         {
-            name: "empLastNameNew", 
-            type: "input", 
-            message: "What is the employee's last name?"
-        }, 
-
-        {
-            name: "empRoleNew",
-            type: "list",
-            message: "What is the employee's new role here?",
-            choice: [
-                "Electrical Engineer",
-                "Software Engineer",
-                "US Regulatory Specialist",
-                "OUS Regulatory Specialist",
-                "US Marketing Specialist",
-                "OUS Marketing Specialist",
-                "IP Legal",
-                "injury Legal"
-            ]
-        },
-
-        {
-            name: "empManagerNew", 
-            type: "list", 
-            message: "Who is the lucky manager?", 
-            choice: [
-                "Sora Anderson", 
-                "Donald Duck", 
-                "Goofy Goof", 
-                "David Hayter", 
-                "Paz Ortiz", 
-                "Donald Anderson", 
-                "Mickey Mouse", 
-                "Bugs Bunny" 
-            ]
+            name: "last_name", 
+            message: "What is the last name of our new employee?"
         }
-    )
+    ]); 
+
+
+    // role population section
+    const rolePrompts = roles.map(({ id, title }) => ({
+        name: title,
+        value: id
+    }));
+
+    const { roleId } = await prompt({
+        type: "list", 
+        name: "roleId", 
+        message: "what role is the new employee doing?", 
+        choice: rolePrompts // referencing the role mapping above
+    });
+
+    employeePrompts.role_id = roleId; 
+
+    // manager population section
+    const managerPrompts = employees.map(({ id, first_name, last_name }) => ({
+        name: `${first_name} ${last_name}`, // using the answers from employeePrompts in this instance. 
+        value: id
+    }));
+
+    managerPrompts.unshift({ name: "None", value: null }); 
+
+    const { managerId } = await prompt({
+        type: "list",
+        name: "managerId",
+        message: "Who is in charge of the new employee",
+        choices: managerPrompts
+    });
+
+    employee.manager_id = managerId;
+
+    await config.createEmployee(employee);
+
+    // once the questions have been answered by the user. 
+    console.log(
+        `Added ${employee.first_name} ${employee.last_name} to the database`
+    );
+
+    popTheQuestion(); // returns to the main questions on the terminal
+};
+
+
+
+
+
+
+const exitLoop = () => {
+    console.log("Thank you! Happy Productivity :)"); 
+    break; 
 }
-
-
 
 
 
