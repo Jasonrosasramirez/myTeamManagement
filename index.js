@@ -1,4 +1,3 @@
-
 /* -- requiring -- */
 
 const mysql = require("mysql"); 
@@ -8,7 +7,7 @@ const inquirer = require("inquirer");   // allows node to prompt questions.
 /* -- imports information from other scripts -- */
 
 const questionArrayEmployees = require("./questions.js"); // references the questions array object on questions.js 
-// const DB = require("./functions"); // imports all of the functins from functions.js
+const DB = require("./db/functions.js"); // imports all of the functins from functions.js
 const { config } = require("process");
 const { async } = require("rxjs");
 
@@ -168,7 +167,7 @@ async function createDepartment(){
  
 
 async function getEmployees() { // views the employees
-    const employees = await db.findAllEmployees(); // retreives the employees
+    const employees = await db.findEmployees(); // retreives the employees
 
     console.log("\n check out the employees below \n");
     console.table(employees); // displays the found employees as a table 
@@ -178,18 +177,22 @@ async function getEmployees() { // views the employees
 
 
 async function getRoles() { // views the roles
-    const roles = await db.findAllRoles(); // scope: function locked :)  
+    const roles = await db.findRoles(); // scope: function locked :)  
 
     console.log("\n check out the roles below \n");
-    console.table(roles); // displays the found employees as a table 
+    console.table(roles); // displays the found roles as a table 
 
     popTheQuestion();
 }
 
 
 async function getDepartments() { // views the departments
+    const departments = await db.findDepartments();  
+    
+    console.log("\n check out the departments below \n");
+    console.table(departments);  
 
-
+    popTheQuestion();
 }
 
 

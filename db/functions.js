@@ -1,5 +1,38 @@
 // All functions will be referenced by index.js
-const connection = require("./config/SQLconnection");
+const connection = require("../config/SQLconnection.js"); // using the SQL database connection 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -- Export will be referenced by ../index.js -- */
+module.exports = new DB(connection); // connection exported
+
+
+
+
+
+
+
+
+
+
+
+/* 
 
 class DB {
 
@@ -62,7 +95,7 @@ class DB {
     }
 
 
-    /* Bonus Stage */
+    / Bonus Stage /
 
     updateEmployeeManager() {
 
@@ -90,5 +123,12 @@ class DB {
 
 }
 
-module.exports = new DB(); // connection
+*/
+
+
+
+
+
+
+
 
