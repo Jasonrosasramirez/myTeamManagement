@@ -8,8 +8,9 @@ const inquirer = require("inquirer");   // allows node to prompt questions.
 /* -- imports information from other scripts -- */
 
 const questionArrayEmployees = require("./questions.js"); // references the questions array object on questions.js 
-const DB = require("./functions"); // imports all of the functins from functions.js
+// const DB = require("./functions"); // imports all of the functins from functions.js
 const { config } = require("process");
+const { async } = require("rxjs");
 
 
 /* -- Manages the information shown on the terminal -- */
@@ -119,13 +120,81 @@ async function createEmployees() {
 };
 
 
+async function createRoles(){
+    const departments = await config.allDepartments();
+
+    const departmentPrompt = departments.map(({ id, name }) => ({
+        name: name,
+        value: id
+    }));
+
+    const role = await prompt([
+        {
+            name: "roleTitle",
+            message: "which role will they be added?"
+        },
+        {
+            name: "roleSalary",
+            message: "What is the role salary?"
+        },
+        {
+            type: "list",
+            name: "department_id",
+            message: "Which department is added?",
+            choices: departmentPrompt // will ask the name and id
+        }
+    ]);
+
+    await config.createRole(role);
+    console.log(`Added ${role.roleTitle} to the database`);
+
+    popTheQuestion();
+}
+
+            
+async function createDepartment(){
+               
+}
+ 
+
+async function getEmployees() {
+
+
+}
+
+
+async function getRoles() {
+
+
+}
+
+
+async function getDepartments() {
+
+
+}
+
+
+async function reviseEmployeeRole() {
+
+
+}
+
+
+async function exitLoop() {
+
+    
+}
+
+            
+
 
 
 
 
 const exitLoop = () => {
     console.log("Thank you! Happy Productivity :)"); 
-    break; 
+    // break; 
 }
 
 
