@@ -54,7 +54,7 @@ const popTheQuestion = (questionArrayImport) => {
 /* -- Secondary Functions Return from popTheQuestion -- */
 // was originally stored on a seperate functions.js file. Moved here to be easier. 
 
-// functino name is different from the choice. Recommended by tutor 
+// function name is different from the choice. Recommended by tutor 
 async function createEmployees() {
     //function needs to be asynchronous. Makes this stateless. Does not wait for the operation to finish. 
     
@@ -108,7 +108,7 @@ async function createEmployees() {
 
     employee.manager_id = managerId;
 
-    await config.createEmployee(employee);
+    await config.createEmployee(employee); // from the functions file
 
     // once the questions have been answered by the user. 
     console.log(
@@ -167,7 +167,7 @@ async function createDepartment(){
  
 
 async function getEmployees() { // views the employees
-    const employees = await db.findEmployees(); // retreives the employees
+    const employees = await db.findEmployees(); // retreives the employees by using the function in functions.js
 
     console.log("\n check out the employees below \n");
     console.table(employees); // displays the found employees as a table 

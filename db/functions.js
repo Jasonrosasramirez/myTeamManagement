@@ -2,34 +2,51 @@
 const connection = require("../config/SQLconnection.js"); // using the SQL database connection 
 
 
+/* -- establishing db object --*/
+class DB {
+    constructor(connection) {
+        this.connection = connection;
+    }
+}
 
 
+/* -- database edit and search funtions --*/
 
+/*
 
+// add section
+createEmployee(employee) {
+    return this.connection.query("INSERT INTO employee set?", employee); // prompts into SQL language and uses the employee param to update
+}
 
+createRole(role) {
+    return this.connection.query("INSERT INTO role SET ?", role);
+}
 
+createDepartment(department) {
+    return this.connection.query("INSERT INTO department SET ?", department);
+}
 
+// view section
+findEmployees() {
+    return this.connection.query(
+        "SELECT employee.id, employee.first_name, employee.last_name;");
+}
 
+findRoles() {
+    return this.connection.query(
+        "SELECT role.id, role.title, department.name;");
+}
 
+findManagers() {
+    return this.connection.query(
+        "SELECT manager.id, manager.title, manager.name;");
+}
 
-
-
-
-
-
-
+*/
 
 /* -- Export will be referenced by ../index.js -- */
 module.exports = new DB(connection); // connection exported
-
-
-
-
-
-
-
-
-
 
 
 /* 
